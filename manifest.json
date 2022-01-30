@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "KnapDynamic",
+    "version": "0.1",
+    
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "css": ["styles.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+
+}

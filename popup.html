@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='styles.css'></link>
+</head>
+<body class="mid">
+  <div class ="theForm">
+      <n></n> 
+      <h1 class ="welcome">Welcome to knapsackOptimize!</h1>
+      <div class="dropdown">
+        <text class="question-mark-icon">?</text>
+          <div class="dropdown-content">
+            <p class="p-class" ><b>Why did I make this?</b><n></n>
+          <p class="p-class">
+              Oftentimes, we have a ton of things that we need to do but it's hard to choose between them.
+              By quantifying the value and time that each will take, you can better choose what will give you the most bang for your buck. 
+              Moreso, by using the Knapsack algorithm, you'll get the mathematically optimal solution, so no more second-guessing yourself.
+              Think of this like the "Find best word" in WordsWithFriends or Scrabble!
+              It finds to fit the most - in real life most of the time we have increments, not chunks, so the algorithm is imperfect - currently working on a version to let you put in chunks or read it from ur calendar and fill them maximizing it all as well, but this assumes you can be flexible. Making an algorithm to check all would mean looping through time slots, if theres more than 1 option for that slot then putting that there and recursively solving the rest to get a value then doing it with the other, comparing the values, and putting that in, then continuing on. It’d be super resource consuming so instead I bunched them up and offered a calendar generation so you can slot them when you’d like.
+          </p>
+          </div>
+        </div>
+      <img class="top-icon" src=icons/backpack1.png></img>
+      <n></n> 
+      <h1 class="lets">Let's optimize in 3 steps!</h1>
+      <div>
+          <ul>
+              <li>
+                  <h2>Step 1:</h2><p class="p-class" id="intro">Put in how much time you have.</p>
+              </li>
+              <li>
+                  <h2>Step 2:</h2><p class="p-class" id="intro">Put in each activity with its value and time it'll take.</p>
+              </li>
+              <li>
+                  <h2>Step 3:</h2><p class="p-class" id="intro">Press submit and see your optimized suggestion done using the Knapsack algorithm!</p>
+              </li>
+          </ul>
+
+      </div>
+      <div class="from">
+        <text><b>Step 1: What is your availability (in minutes or a time-range):</b></text>
+        <br>
+        <br>
+        <text>From: </text>
+        <input type='time' id='beginning-time'></input>
+        <text>To: </text>
+        <input type='time' id='ending-time'></input>
+        <br>
+        <br>
+        <text >Alternatively, how many minutes free do you have today? </text>
+        <input type="number" id='minutes-given'></input>
+        <br>
+        <br>
+      </div>
+      <div class="from">
+        <text class="from"><b>Step 2: List the activities, time required (in minutes), importance (3 most, 1 least)</b></text>
+      </div>
+    <br>
+      <div class="mainSpot" id="bigDiv">
+    <form id ="form">
+      <table id="table">
+        <tbody >
+          <tr>
+            <td>
+              <label for="name0">Activity's Name</label>
+              <input type="text" id="activity0">
+            </td>
+            <td>
+              <label for="time0">Time Required for it</label>
+              <input type="number" id="time0">
+            </td>
+            <td>
+              <label for="rank0">Rank</label>
+              <select id="rank0">
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </br>
+    </form>
+      <div>
+        <button type="button" id ="addMore" class="btn btn-primary">+</button>
+        <button type="button" id ="removeBtn" class="btn btn-danger">-</button>
+      </div>
+  </div>
+<div>
+  <button type="submit" id = "submitOne" class="btn btn-success">Calculate</button>
+</div>
+    <div id="output">
+      <br>
+    </div>
+    <div>
+      <button type="submit" id = "addToCalendarBtn" class="btn btn-success">AddToCalendar</button>
+    </div>
+    <br>
+    <br>
+    <div id ='calendar-links'>
+      
+    </div>
+    <script src = "content.js"></script>
+</body>
+</html>
